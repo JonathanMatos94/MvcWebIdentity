@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34408.163
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcWebIdentity", "MvcWebIdentity.csproj", "{B474AAE4-67FF-4D5A-8A9A-44D796155EBA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{31BEF921-1BF1-4C31-AEA4-EC028410A343}"
+	ProjectSection(SolutionItems) = preProject
+		Notas.txt = Notas.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B474AAE4-67FF-4D5A-8A9A-44D796155EBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B474AAE4-67FF-4D5A-8A9A-44D796155EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B474AAE4-67FF-4D5A-8A9A-44D796155EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B474AAE4-67FF-4D5A-8A9A-44D796155EBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66C96133-D4BC-4ABF-ACFB-2105C4936270}
+	EndGlobalSection
+EndGlobal

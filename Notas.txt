@@ -1,0 +1,62 @@
+Senha para acesso Numsey#2023
+
+##Tabelas do Identity
+
+	AspNet Users: Tabela principal que armazena as informações do usuário.
+
+	AspNet Roles: Armazena as roles que o usuário pode ter.
+
+	AspNet UserClaims: Armazena as declarações (Claims) do usuário [??].
+
+	AspNet UserLogins: Armazena o tempo de login do usuário.
+
+	AspNet UserRoles: Tabela de junção que armazena o usuário e sua role.
+
+	AspNet UserTokens: Tabela criada para armazenar as informações sobre os 
+	tokens gerados.
+
+##Classes do Identity para login e logoff
+
+	UserManager<IdentityUser> : É responsável por gerenciar as operações de criação,
+		leitura, atualização e exclusão de usuários.
+
+	SignInManager<IdentityUser> : é responsável por gerenciar o processo de autenticação 
+		de usuários em um aplicativo
+
+
+##Autorizações baseadas em Roles
+	
+	Permite controlar o acesso aos recursos da aplicação com base nas FUNÇÕES ou PAPÉIS(ROLES) 
+	dos usuários.
+
+	As roles são um conjunto de permissões ou privilégios que são 
+	atribuídos a determinados usuários para permitir ou negar acesso a recursos da aplicação.
+
+	Por exemplo, uma aplicação pode ter roles como "Administrador", "Usuário" e "Convidado",
+	cada uma com um conjunto de permissões específicas.
+
+	Ao utilizar a autorização baseada em roles podemos usar o atributo [Authorize(Roles = "RoleName")] em um controlador
+	ou método Action para permitir ou negar o acesso aos usuários que possuem uma role específica.
+
+
+##Autorização baseada em Claims
+
+	Quando uma identidade é criada podemos atribuir a ela uma ou mais declarações 
+	emitidas por uma autoridade confiável
+
+	A Identidade do usuário consiste em um conjunto de propriedades como ID, nome, email
+	e etc...e essas propriedades são chamadas de claims ou declarações.
+
+	Um conjunto de Claims ou declarações é uma lista de propriedades que pertencem ao usuário.
+
+	Uma claim é representada em um formato chave-valor
+
+	Ex: Carteira de Habilitação emitida pela autoridade de trânsito.
+	As claims seriam o Nome, Data de Nascimento, Numero da CNH, Emissão, Validade
+
+	Podemos usar as Claims de um usuário e definir uma política de autorização
+	A autorização baseada em claims ou declarações, verifica o valor de uma claim e permite o acesso
+	a um recurso com base no valor da claim e/ou na política de autorização definida.
+
+	Um usuário pode ter qualquer número de Claims
+	A API do Identity armazena as declarações dos usuários na tabela AspNetUserClaims
