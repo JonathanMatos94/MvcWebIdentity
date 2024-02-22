@@ -60,3 +60,17 @@ Senha para acesso Numsey#2023
 
 	Um usuário pode ter qualquer número de Claims
 	A API do Identity armazena as declarações dos usuários na tabela AspNetUserClaims
+
+
+##Interface IAuthorizationRequirement e a classe AuthorizationHandler para políticas personalizadas
+	
+
+	Criar uma classe que implemente a interface IAuthorizationRequirement, essa classe deve representar a regra
+	de autorização que você deseja aplicar ao recurso.
+
+	Criar uma classe que herde da classe AuthorizationHandler<T>, onde T é o tio da sua classe
+	que implementa IAuthorizationRequirement. Está classe será responsável por avaliar se a regra
+	de autorização definida pela sua interface IAuthorizationRequirement é atendida.
+
+	Registrar sua política de autorização personalizada no serviço de autorização da ASPNET Core
+	usando o método AddPolicy da classe AuthorizationOptions

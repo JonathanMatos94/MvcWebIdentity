@@ -14,38 +14,44 @@ namespace MvcWebIdentity.Services
         {
             try
             {
-                //Cria usuário 1
-                IdentityUser user1 = await _userManager.FindByEmailAsync("admin@localhost");
-                if (user1 is not null)
+                //usuário 1 
+                IdentityUser user1 = await _userManager.FindByEmailAsync("gerente@localhost");
+                if(user1 is not null) 
                 {
-                    var claimList = (await _userManager.GetClaimsAsync(user1))
-                        .Select(p => p.Type);
-                    if (!claimList.Contains("CadastradoEm")) 
-                    {
-                        var claimResult1= await _userManager.AddClaimAsync(user1, new Claim("CadastradoEm","09/15/2014"));
+                    var claimList = (await _userManager.GetClaimsAsync(user1)).Select(p => p.Type);
 
-                    }
-                    if (!claimList.Contains("IsAdmin"))
+                    if (!claimList.Contains("CadastradoEm"))
                     {
-                        var claimResult2 = await _userManager.AddClaimAsync(user1, new Claim("IsAdmin", "true"));
+                        var claimResult1 = await _userManager.AddClaimAsync(user1,
+                            new Claim("CadastradoEm", "03/03/2022"));
                     }
                 }
-                //Cria usuário 2
+                //usuário 2 
                 IdentityUser user2 = await _userManager.FindByEmailAsync("usuario@localhost");
-                if (user1 is not null)
+                if (user2 is not null)
                 {
-                    var claimList = (await _userManager.GetClaimsAsync(user2))
-                        .Select(p => p.Type);
-                    if (!claimList.Contains("IsAdmin"))
-                    {
-                        var claimResult1 = await _userManager.AddClaimAsync(user2, new Claim("IsAdmin", "false"));
+                    var claimList = (await _userManager.GetClaimsAsync(user2)).Select(p => p.Type);
 
-                    }
-                    if (!claimList.Contains("IsFuncionario"))
+                    if (!claimList.Contains("CadastradoEm"))
                     {
-                        var claimResult2 = await _userManager.AddClaimAsync(user2, new Claim("IsFuncionario", "true"));
+                        var claimResult1 = await _userManager.AddClaimAsync(user2,
+                            new Claim("CadastradoEm", "03/03/2018"));
                     }
                 }
+                //usuário 3 
+                IdentityUser user3 = await _userManager.FindByEmailAsync("macoratti@yahoo");
+                if (user3 is not null)
+                {
+                    var claimList = (await _userManager.GetClaimsAsync(user3)).Select(p => p.Type);
+
+                    if (!claimList.Contains("CadastradoEm"))
+                    {
+                        var claimResult1 = await _userManager.AddClaimAsync(user3,
+                            new Claim("CadastradoEm", "02/02/2020"));
+                    }
+                }
+
+
 
             }
             catch (Exception) 
